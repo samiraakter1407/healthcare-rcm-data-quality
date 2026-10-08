@@ -109,6 +109,9 @@ rcm_columns = [
 
 rcm_df = df[rcm_columns].copy()
 
+rcm_df["Billing Amount Valid"] = rcm_df["Billing Amount Valid"].astype(int)
+rcm_df["Length of Stay Valid"] = rcm_df["Length of Stay Valid"].astype(int)
+
 # Rename columns for SQL-friendly names
 rcm_df = rcm_df.rename(columns={
     "Name": "patient_name",
