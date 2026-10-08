@@ -65,6 +65,8 @@ df["payment_date"] = np.where(
 )
 
 df["payment_date"] = pd.to_datetime(df["payment_date"])
+df["payment_date"] = df["payment_date"].dt.strftime("%Y-%m-%d")
+df["payment_date"] = df["payment_date"].fillna("\\N")
 
 # Generate denial reasons
 denial_reasons = [
